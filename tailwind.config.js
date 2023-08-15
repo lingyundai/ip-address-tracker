@@ -17,6 +17,11 @@ module.exports = {
           {'min': '500px'}
         ]
       },
+      fontFamily: {
+        rubik: ['Rubik', 'sans-serif'],
+        rubikMedium: ['Rubik-Medium', 'sans-serif'],
+        rubikBold: ['Rubik-Bold', 'sans-serif'],
+      },
     },
   },
   plugins: [],
