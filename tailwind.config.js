@@ -22,6 +22,9 @@ module.exports = {
         rubikMedium: ['Rubik-Medium', 'sans-serif'],
         rubikBold: ['Rubik-Bold', 'sans-serif'],
       },
+      borderRadius: {
+        'lg': '14px',
+      },
     },
   },
   plugins: [],
