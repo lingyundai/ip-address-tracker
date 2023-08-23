@@ -1,16 +1,15 @@
 function Tracker () {
-    // sm:right-8 lg:right-24
     return (
-        <div class="flex">
+        <div class="flex text-center">
             <div class="w-full h-64 bg-cover lg:bg-desktop-header-image sm:bg-mobile-header-image">
-                <header class="pt-8 text-center">
+                <header class="pt-8">
                     <h1 class="text-2xl font-rubik font-bold tracking-wide text-white">IP Address Tracker</h1>
                 </header>
-                <div class="w-full mt-8 inline-block relative ml-[10.5vw]">
+                <div class="w-full mt-8 inline-block relative pr-10">
                     <input
                         type="search" 
                         id="default-search"
-                        class="w-4/6 p-3.5 rounded-tl-lg rounded-bl-lg"
+                        class="sm:w-searchsmall lg:w-searchbig p-3.5 rounded-tl-lg rounded-bl-lg max-w-full"
                         placeholder="Search for any IP address or domain" 
                         required
                     >
@@ -20,6 +19,16 @@ function Tracker () {
                             <path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" />
                         </svg>
                     </button>
+                </div>
+                <div class="container mt-7 inline-block relative rounded-lg bg-gray-500
+                            sm:max-w-sm sm:w-80 sm:h-80
+                            lg:w-containerlg lg:h-44">
+                    <div class="">
+                        <p>IP ADDRESS</p>
+                        <p>LOCATION</p>
+                        <p>TIMEZONE</p>
+                        <p>ISP</p>
+                    </div>
                 </div>
             </div>
         </div>
