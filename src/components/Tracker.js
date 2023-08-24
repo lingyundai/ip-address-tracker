@@ -20,14 +20,26 @@ function Tracker () {
                         </svg>
                     </button>
                 </div>
-                <div class="container mt-7 inline-block relative rounded-lg bg-gray-500
+                <div class="container mt-7 inline-block relative rounded-lg bg-black
                             sm:max-w-sm sm:w-80 sm:h-80
-                            lg:w-containerlg lg:h-44">
-                    <div class="">
-                        <p>IP ADDRESS</p>
-                        <p>LOCATION</p>
-                        <p>TIMEZONE</p>
-                        <p>ISP</p>
+                            lg:w-containerlg lg:h-40">
+                    <div class="font-rubikMedium text-small tracking-wider text-zinc-400 mt-8
+                                lg:flex">
+                        <div class="sm:mb-11 lg:basis-[25%]">
+                            <p class="lg:text-start lg:ml-7">IP ADDRESS</p>
+                        </div>
+                        <div class="lg:border-r-zinc-400 lg:h-16 lg:mt-4 lg:border-[0.5px]"></div>
+                        <div class="sm:mb-11 lg:basis-[25%]">
+                            <p class="lg:text-start lg:ml-7">LOCATION</p>
+                        </div>
+                        <div class="lg:border-r-zinc-400 lg:h-16 lg:mt-4 lg:border-[0.5px]"></div>
+                        <div class="sm:mb-11 lg:basis-[25%]">
+                            <p class="lg:text-start lg:ml-7">TIMEZONE</p>
+                        </div>
+                        <div class="lg:border-r-zinc-400 lg:h-16 lg:mt-4 lg:border-[0.5px]"></div>
+                        <div class="sm:mb-11 lg:basis-[25%]">
+                            <p class="lg:text-start lg:ml-7">ISP</p>
+                        </div>
                     </div>
                 </div>
             </div>
