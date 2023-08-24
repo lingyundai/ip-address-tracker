@@ -29,7 +29,12 @@ module.exports = {
         'searchsmall': '270px',
         'searchbig': '500px',
         'containerlg': '950px',
-      }
+      },
+      fontSize: {
+        'small': ['0.70rem', {
+          letterSpacing: '-0.05em',
+          fontWeight: '500',
+        }]},
     },
   },
   plugins: [],
