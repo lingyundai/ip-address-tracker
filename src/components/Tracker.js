@@ -5,7 +5,7 @@ function Tracker () {
                 <header class="pt-8">
                     <h1 class="text-2xl font-rubik font-bold tracking-wide text-white">IP Address Tracker</h1>
                 </header>
-                <div class="w-full mt-8 inline-block relative pr-10">
+                <div class="w-full mt-8 inline-block relative pr-12">
                     <input
                         type="search" 
                         id="default-search"
@@ -20,25 +20,25 @@ function Tracker () {
                         </svg>
                     </button>
                 </div>
-                <div class="container mt-7 inline-block relative rounded-lg bg-black
-                            sm:max-w-sm sm:w-80 sm:h-80
+                <div class="container mt-7 inline-block relative rounded-lg bg-white shadow
+                            sm:max-w-sm sm:w-[300px] sm:h-78
                             lg:w-containerlg lg:h-40">
-                    <div class="font-rubikMedium text-small tracking-wider text-zinc-400 mt-8
+                    <div class="font-rubikMedium text-small tracking-wider text-zinc-500 mt-6
                                 lg:flex">
                         <div class="sm:mb-11 lg:basis-[25%]">
-                            <p class="lg:text-start lg:ml-7">IP ADDRESS</p>
+                            <p class="lg:text-start lg:ml-[2vw]">IP ADDRESS</p>
                         </div>
                         <div class="lg:border-r-zinc-400 lg:h-16 lg:mt-4 lg:border-[0.5px]"></div>
                         <div class="sm:mb-11 lg:basis-[25%]">
-                            <p class="lg:text-start lg:ml-7">LOCATION</p>
+                            <p class="lg:text-start lg:ml-[2vw]">LOCATION</p>
                         </div>
                         <div class="lg:border-r-zinc-400 lg:h-16 lg:mt-4 lg:border-[0.5px]"></div>
                         <div class="sm:mb-11 lg:basis-[25%]">
-                            <p class="lg:text-start lg:ml-7">TIMEZONE</p>
+                            <p class="lg:text-start lg:ml-[2vw]">TIMEZONE</p>
                         </div>
                         <div class="lg:border-r-zinc-400 lg:h-16 lg:mt-4 lg:border-[0.5px]"></div>
                         <div class="sm:mb-11 lg:basis-[25%]">
-                            <p class="lg:text-start lg:ml-7">ISP</p>
+                            <p class="lg:text-start lg:ml-[2vw]">ISP</p>
                         </div>
                     </div>
                 </div>
