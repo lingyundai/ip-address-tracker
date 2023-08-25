@@ -26,7 +26,7 @@ module.exports = {
         'lg': '14px',
       },
       width: {
-        'searchsmall': '270px',
+        'searchsmall': '245px',
         'searchbig': '500px',
         'containerlg': '950px',
       },
