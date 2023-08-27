@@ -31,9 +31,9 @@ module.exports = {
         'containerlg': '950px',
       },
       fontSize: {
-        'small': ['0.70rem', {
-          letterSpacing: '-0.05em',
-          fontWeight: '500',
+        'small': ['0.65rem', {
+          letterSpacing: '-0.01em',
+          fontWeight: '400',
         }]},
     },
   },

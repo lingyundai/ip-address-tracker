@@ -21,9 +21,9 @@ function Tracker () {
                     </button>
                 </div>
                 <div class="container mt-7 inline-block relative rounded-lg bg-white shadow
-                            sm:max-w-sm sm:w-[300px] sm:h-78
+                            sm:max-w-sm sm:w-[300px] sm:h-[270px]
                             lg:w-containerlg lg:h-40">
-                    <div class="font-rubikMedium text-small tracking-wider text-zinc-500 mt-6
+                    <div class="font-rubikMedium text-small tracking-wider text-gray-500 mt-6
                                 lg:flex">
                         <div class="sm:mb-11 lg:basis-[25%]">
                             <p class="lg:text-start lg:ml-[2vw]">IP ADDRESS</p>
