@@ -1,3 +1,7 @@
+import { FETCH_GEO_REQUESTED, 
+        FETCH_GEO_SUCCEEDED, 
+        FETCH_GEO_FAILED } from '../constants/constants';
+
 const geoInitalState = {
     loading: false,
     data: [],
@@ -5,7 +9,7 @@ const geoInitalState = {
 }
 
 const geoReducer = (state = geoInitalState, action) => {
-    switch(action.type) {
+    switch(action) {
         case FETCH_GEO_REQUESTED:
             return {
                 ...state,
@@ -23,5 +27,9 @@ const geoReducer = (state = geoInitalState, action) => {
                 data: [],
                 error: action.payload,
             }
+        default:
+            return state;
     }
 }
+
+export default geoReducer;
