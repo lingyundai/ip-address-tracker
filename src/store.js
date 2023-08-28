@@ -1,11 +1,8 @@
-import { applyMiddleware, createStore, getState } from 'react-redux';
-import logger from 'redux-logger';
-import { ThunkMiddleware } from 'redux-thunk';
-
+import { legacy_createStore as createStore } from 'redux';
+import rootReducers from './reducers/index';
+ 
 const store = createStore(
-  applyMiddleware(logger),
-  geoReducer,
-  applyMiddleware(ThunkMiddleware),
+  rootReducers,
 )
 
-console.log("inital state ", store.getState());
+export default store;
