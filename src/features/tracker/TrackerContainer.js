@@ -1,40 +1,39 @@
 import Tracker from "./Tracker";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchIpAddress, getTrackerStatus, getTrackerError, getIpAddressData } from './trackerSlice';
-import { useState } from "react";
+import { fetchIpAddress, selectIpData, selectTrackerError, selectTrackerStatus } from './trackerSlice';
+import { useState, useEffect } from "react";
 
 function TrackerContainer() {
     const dispatch = useDispatch();
-    const trackerStatus = useSelector(getTrackerStatus);
-    const trackerError = useSelector(getTrackerError);
-    const ipAddressData = useSelector(getIpAddressData);
+    const trackerStatus = useSelector(selectTrackerStatus);
+    const trackerError = useSelector(selectTrackerError);
+    const ipAddressData = useSelector(selectIpData);
+    console.log("inside, ", trackerStatus);
 
-    const defaultResultValue = {
+    const defaultResultValues = {
         ip: '',
         location: '',
         timezone: '',
         isp: '',
     }
 
-    const [resultFields, setResultFields] = useState(defaultResultValue);
-
+    const [resultFields, setResultFields] = useState(defaultResultValues);
 
     useEffect(() => {
         if (trackerStatus === 'idle') {
             dispatch(fetchIpAddress())
         }
-    }, [postStatus, dispatch])
+        if (trackerStatus === 'succeeded') {
+            setResultFields((resultFields) => ({
+                ...resultFields,
+                ip: ipAddressData.ip,
+                location: ipAddressData.location.city + ', ' + ipAddressData.location.region + " " + ipAddressData.location.postalCode,
+                timezone: ipAddressData.location.timezone,
+                isp: ipAddressData.isp,
+            }))
+        } 
+    }, [trackerStatus, dispatch]);
 
-    if (trackerStatus === 'succeeded') {
-        console.log(ipAddressData);
-        setResultFields({
-            ...resultFields,
-            ip: ipAddressData.ip,
-            location: ipAddressData.location.city + ', ' + ipAddressData.location.region + " " + ipAddressData.location.postalCode,
-            timezone: ipAddressData.location.timezone,
-            isp: ipAddressData.isp,
-        })
-    } 
 
     console.log(resultFields);
 

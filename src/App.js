@@ -1,9 +1,9 @@
-import Tracker from "./features/tracker/Tracker";
+import TrackerContainer from "./features/tracker/TrackerContainer";
 
 function App() {
   return (
     <div className="App">
-      <Tracker />
+      <TrackerContainer />
     </div>
   );
 }

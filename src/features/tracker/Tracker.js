@@ -23,22 +23,38 @@ function Tracker ({ resultFields }) {
                 <div class="container mt-7 inline-block relative rounded-lg bg-white shadow
                             sm:max-w-sm sm:w-[300px] sm:h-[270px]
                             lg:w-containerlg lg:h-40">
-                    <div class="font-rubikMedium text-small tracking-wider text-gray-500 mt-6
+                    <div class="font-rubikMedium tracking-wider mt-6
                                 lg:flex">
-                        <div class="sm:mb-11 lg:basis-[25%]">
-                            <p class="lg:text-start lg:ml-[2vw]">IP ADDRESS</p>
+                        <div class="lg:basis-[25%]">
+                            <p class="lg:text-start lg:ml-[2vw] text-[9px] tracking-[0.15em] text-zinc-500 font-bold">IP ADDRESS</p>
+                            {resultFields.ip && 
+                                <div class="text-xl text-black sm:p-[3px] sm:mb-3 
+                                            lg:text-start lg:ml-[2vw] lg:mt-2">{resultFields.ip}</div>
+                            }
                         </div>
                         <div class="lg:border-r-zinc-400 lg:h-16 lg:mt-4 lg:border-[0.5px]"></div>
-                        <div class="sm:mb-11 lg:basis-[25%]">
-                            <p class="lg:text-start lg:ml-[2vw]">LOCATION</p>
+                        <div class="lg:basis-[25%]">
+                            <p class="lg:text-start lg:ml-[2vw] text-[9px] tracking-[0.15em] text-zinc-500 font-bold">LOCATION</p>
+                            {resultFields.location && 
+                                <div class="text-xl text-black sm:p-[3px] sm:mb-3 
+                                            lg:text-start lg:ml-[2vw] lg:mt-2">{resultFields.location}</div>
+                            }
                         </div>
                         <div class="lg:border-r-zinc-400 lg:h-16 lg:mt-4 lg:border-[0.5px]"></div>
-                        <div class="sm:mb-11 lg:basis-[25%]">
-                            <p class="lg:text-start lg:ml-[2vw]">TIMEZONE</p>
+                        <div class="lg:basis-[25%]">
+                            <p class="lg:text-start lg:ml-[2vw] text-[9px] tracking-[0.15em] text-zinc-500 font-bold">TIMEZONE</p>
+                            {resultFields.timezone && 
+                                <div class="text-xl text-black sm:p-[3px] sm:mb-3 
+                                            lg:text-start lg:ml-[2vw] lg:mt-2">{resultFields.timezone}</div>
+                            }
                         </div>
                         <div class="lg:border-r-zinc-400 lg:h-16 lg:mt-4 lg:border-[0.5px]"></div>
-                        <div class="sm:mb-11 lg:basis-[25%]">
-                            <p class="lg:text-start lg:ml-[2vw]">ISP</p>
+                        <div class="lg:basis-[25%]">
+                            <p class="lg:text-start lg:ml-[2vw] text-[9px] tracking-[0.15em] text-zinc-500 font-bold">ISP</p>
+                            {resultFields.isp && 
+                                <div class="text-xl text-black sm:p-[3px] sm:mb-3 
+                                            lg:text-start lg:ml-[2vw] lg:mt-2">{resultFields.isp}</div>
+                            }
                         </div>
                     </div>
                 </div>
