@@ -1,4 +1,4 @@
-function Tracker () {
+function Tracker ({ resultFields }) {
     return (
         <div class="flex text-center">
             <div class="w-full h-64 bg-cover lg:bg-desktop-header-image sm:bg-mobile-header-image">
