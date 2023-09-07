@@ -8,8 +8,9 @@ const initialState = {
     error: null,
 }
 
+
 export const fetchIpAddress = createAsyncThunk("tracker/fetchIpAddress", async () => {
-    const response = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=${GEOLOCATION_KEY}&ipAddress=8.8.8.8`);
+    const response = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=${GEOLOCATION_KEY}`);
     console.log(response.data);
     return response.data;
 })
