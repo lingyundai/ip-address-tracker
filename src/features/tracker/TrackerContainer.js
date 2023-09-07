@@ -8,6 +8,7 @@ function TrackerContainer() {
     const trackerStatus = useSelector(selectTrackerStatus);
     const trackerError = useSelector(selectTrackerError);
     const ipAddressData = useSelector(selectIpData);
+
     console.log("inside, ", trackerStatus);
 
     const defaultResultValues = {
