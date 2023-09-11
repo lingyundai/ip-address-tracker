@@ -22,7 +22,9 @@ function Tracker ({ resultFields }) {
                 </div>
                 <div class="container mt-7 inline-block relative rounded-lg bg-white shadow
                             sm:max-w-sm sm:w-[330px] sm:h-[300px]
-                            lg:w-containerlg lg:h-40">
+                            lg:w-containerlg lg:h-40 z-10">
+                    <div>
+                    </div>
                     <div class="font-rubikMedium mt-6 first-letter flex sm:flex-col">
                         <div class="lg:basis-[25%]">
                             <p class="lg:text-start lg:ml-[2vw] text-[9px] tracking-[0.15em] text-zinc-500 font-bold">IP ADDRESS</p>
