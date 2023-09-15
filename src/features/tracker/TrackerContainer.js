@@ -8,8 +8,15 @@ function TrackerContainer() {
     const trackerStatus = useSelector(selectTrackerStatus);
     const trackerError = useSelector(selectTrackerError);
     const ipAddressData = useSelector(selectIpData);
-
     console.log("inside, ", trackerStatus);
+
+    const defaultPosition = {
+        long: '',
+        lat: '',
+    }
+
+    const [position, setPosition] = useState(defaultPosition);
+    console.log(position);
 
     const defaultResultValues = {
         ip: '',
@@ -31,6 +38,11 @@ function TrackerContainer() {
                 location: ipAddressData.location.city + ', ' + ipAddressData.location.region + " " + ipAddressData.location.postalCode,
                 timezone: ipAddressData.location.timezone,
                 isp: ipAddressData.isp,
+            }))
+            setPosition((position) => ({
+                ...position,
+                lat: ipAddressData.location.lat,
+                long: ipAddressData.location.lng,
             }))
         } 
     }, [trackerStatus, dispatch]);
