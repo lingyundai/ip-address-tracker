@@ -1,5 +1,15 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import icon from "leaflet/dist/images/marker-icon.png";
+import L from "leaflet";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
+
+let markerIcon = L.icon({
+  iconUrl: icon,
+  shadowUrl: iconShadow,
+});
+
+L.Marker.prototype.options.icon = markerIcon;
 
 function Tracker ({ resultFields }) {
     return (
@@ -62,19 +72,20 @@ function Tracker ({ resultFields }) {
                     </div>
                 </div>
             </div>
-            <div>
-            <MapContainer center={[resultFields.lat, resultFields.lng]} zoom={13} scrollWheelZoom={false} class="h-[60vw] w-[60vw] z-20">
+            {resultFields.lat && resultFields.lng &&             
+                <MapContainer center={[resultFields.lat, resultFields.lng]} zoom={13} scrollWheelZoom={false} 
+                style={{ width: "100%", height: "72vh", zIndex: "1"}}>
                 <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker position={[resultFields.lat, resultFields.lng]}>
-                <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                </Popup>
-                </Marker>
-            </MapContainer>
-            </div>
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    <Marker position={[resultFields.lat, resultFields.lng]}>
+                    <Popup>
+                        A pretty CSS3 popup. <br /> Easily customizable.
+                    </Popup>
+                    </Marker>
+                </MapContainer>
+            }
         </div>
     )
 }

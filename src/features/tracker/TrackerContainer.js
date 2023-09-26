@@ -8,26 +8,27 @@ function TrackerContainer() {
     const trackerStatus = useSelector(selectTrackerStatus);
     const trackerError = useSelector(selectTrackerError);
     const ipAddressData = useSelector(selectIpData);
-    console.log("inside, ", trackerStatus);
+    // console.log("inside, ", trackerStatus);
 
     const defaultResultValues = {
         ip: '',
         location: '',
         timezone: '',
         isp: '',
-        lat: 0,
-        lng: 0,
+        lat: '',
+        lng: '',
     }
 
     const [resultFields, setResultFields] = useState(defaultResultValues);
 
     useEffect(() => {
         if (trackerStatus === 'idle') {
+            console.log("called");
             dispatch(fetchIpAddress())
         }
         if (trackerStatus === 'succeeded') {
-            setResultFields((resultFields) => ({
-                ...resultFields,
+            setResultFields((prevState) => ({
+                ...prevState,
                 ip: ipAddressData.ip,
                 location: ipAddressData.location.city + ', ' + ipAddressData.location.region + ' ' + ipAddressData.location.postalCode,
                 timezone: ipAddressData.location.timezone,
@@ -39,10 +40,7 @@ function TrackerContainer() {
             console.log(trackerError);   
         }
     }, [trackerStatus, dispatch]);
-
-
-    console.log(resultFields);
-
+    console.log("re, ", resultFields);
     return (
         <Tracker 
             resultFields={resultFields}
