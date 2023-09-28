@@ -8,11 +8,18 @@ const initialState = {
     error: null,
 }
 
+export const fetchIpAddress = createAsyncThunk("tracker/fetchIpAddress", 
+    async (userInput = "") => {
+        let apiUrl = `https://geo.ipify.org/api/v2/country,city?apiKey=${GEOLOCATION_KEY}`;
+        
+        if (userInput.length > 0) {
+            apiUrl += `&ipAddress=${userInput}`;
+        }
 
-export const fetchIpAddress = createAsyncThunk("tracker/fetchIpAddress", async () => {
-    const response = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=${GEOLOCATION_KEY}`);
-    console.log(response.data);
-    return response.data;
+        const response = await axios.get(apiUrl);
+
+        console.log(response);
+        return response.data;
 })
 
 const trackerSlice = createSlice({

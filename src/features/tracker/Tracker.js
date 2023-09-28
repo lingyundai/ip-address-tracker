@@ -11,7 +11,7 @@ let markerIcon = L.icon({
 
 L.Marker.prototype.options.icon = markerIcon;
 
-function Tracker ({ resultFields }) {
+function Tracker ({ resultFields, handleChange, handleSubmit, inputError }) {
     return (
         <div>
             <div class="flex text-center">
@@ -19,21 +19,23 @@ function Tracker ({ resultFields }) {
                     <header class="pt-8">
                         <h1 class="text-2xl font-rubik font-bold tracking-wide text-white">IP Address Tracker</h1>
                     </header>
-                    <div class="w-full mt-8 inline-block relative pr-12">
+                    <form class="w-full mt-8 inline-block relative pr-12" onSubmit={handleSubmit}>
                         <input
                             type="search" 
                             id="default-search"
                             class="sm:w-searchsmall lg:w-searchbig p-3.5 rounded-tl-lg rounded-bl-lg max-w-full"
-                            placeholder="Search for any IP address or domain" 
+                            placeholder="Search for any IP address or domain"
+                            onChange={handleChange}
                             required
-                        >
-                        </input>
+                        />
                         <button type="submit" class=" bg-black rounded-tr-lg rounded-br-lg p-1.5 absolute">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 p-3">
                                 <path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" />
                             </svg>
                         </button>
-                    </div>
+                        {inputError.errorMessage && 
+                                <div class={"text-red-400 font-poppinsItalic font-thin tracking-normal"}>{inputError.errorMessage}</div>}
+                    </form>
                     <div class="container mt-7 inline-block relative rounded-lg bg-white shadow
                                 sm:max-w-sm sm:w-[330px] sm:h-[300px]
                                 lg:w-containerlg lg:h-40 z-10">
@@ -72,9 +74,9 @@ function Tracker ({ resultFields }) {
                     </div>
                 </div>
             </div>
-            {resultFields.lat && resultFields.lng &&             
+            { resultFields.lat && resultFields.lng &&             
                 <MapContainer center={[resultFields.lat, resultFields.lng]} zoom={13} scrollWheelZoom={false} 
-                style={{ width: "100%", height: "72vh", zIndex: "1"}}>
+                style={{ width: "100%", height: "78vh", zIndex: "1"}}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
