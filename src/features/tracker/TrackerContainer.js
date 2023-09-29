@@ -75,11 +75,7 @@ function TrackerContainer() {
                 }))
             }
         } else {
-            console.log(trackerError);   
-            setInputError((inputError) => ({
-                ...inputError,
-                errorMessage: trackerError,
-            }))
+            console.log(trackerError);
         }
     }, [trackerStatus, dispatch]);
 
