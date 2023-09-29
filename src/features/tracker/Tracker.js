@@ -37,7 +37,7 @@ function Tracker ({ resultFields, handleChange, handleSubmit, inputError }) {
                                 <div class={"text-red-500 font-rubik text-xs mt-2 ml-8"}>{inputError.errorMessage}</div>}
                     </form>
                     <div class="container mt-5 inline-block relative rounded-lg bg-white shadow
-                                sm:max-w-sm sm:w-[330px] sm:h-[300px]
+                                sm:max-w-sm sm:w-[300px] sm:h-[300px]
                                 lg:w-containerlg lg:h-40 z-10">
                         <div>
                         </div>
@@ -45,28 +45,28 @@ function Tracker ({ resultFields, handleChange, handleSubmit, inputError }) {
                             <div class="lg:basis-[25%]">
                                 <p class="lg:text-start lg:ml-[2vw] text-[9px] tracking-[0.15em] text-zinc-500 font-bold">IP ADDRESS</p>
                                 {resultFields.ip && 
-                                    <div class="text-xl text-black sm:mt-2 sm:mb-3 sm:text-[5vw]
+                                    <div class="text-xl text-black sm:mt-2 sm:mb-3 sm:text-[4vw]
                                                 lg:text-start lg:ml-[2vw] lg:mt-2">{resultFields.ip}</div>
                                 }
                             </div>
                             <div class="lg:basis-[25%]">
                                 <p class="lg:text-start lg:ml-[2vw] text-[9px] tracking-[0.15em] text-zinc-500 font-bold">LOCATION</p>
                                 {resultFields.location && 
-                                    <div class="text-xl text-black sm:mt-2 sm:mb-3 sm:text-[5vw]
+                                    <div class="text-xl text-black sm:mt-2 sm:mb-3 sm:text-[4vw]
                                                 lg:text-start lg:ml-[2vw] lg:mt-2">{resultFields.location}</div>
                                 }
                             </div>
                             <div class="lg:basis-[25%]">
                                 <p class="lg:text-start lg:ml-[2vw] text-[9px] tracking-[0.15em] text-zinc-500 font-bold">TIMEZONE</p>
                                 {resultFields.timezone && 
-                                    <div class="text-xl text-black sm:mt-2 sm:mb-3 sm:text-[5vw]
+                                    <div class="text-xl text-black sm:mt-2 sm:mb-3 sm:text-[4vw]
                                                 lg:text-start lg:ml-[2vw] lg:mt-2">UTC {resultFields.timezone}</div>
                                 }
                             </div>
                             <div class="lg:basis-[25%]">
                                 <p class="lg:text-start lg:ml-[2vw] text-[9px] tracking-[0.15em] text-zinc-500 font-bold">ISP</p>
                                 {resultFields.isp && 
-                                    <div class="text-xl text-black sm:mt-2 sm:mb-3 sm:text-[5vw] text-
+                                    <div class="text-xl text-black sm:mt-2 sm:mb-3 sm:text-[4vw] text-
                                                 lg:text-start lg:ml-[2vw] lg:mt-2 text-clip">{resultFields.isp}</div>
                                 }
                             </div>

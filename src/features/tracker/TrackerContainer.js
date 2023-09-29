@@ -62,7 +62,7 @@ function TrackerContainer() {
                 setResultFields((prevState) => ({
                     ...prevState,
                     ip: ipAddressData.ip,
-                    location: ipAddressData.location.city + ', ' + ipAddressData.location.region + ' ' + ipAddressData.location.postalCode,
+                    location: ipAddressData.location.city + ' ' + ipAddressData.location.region + ' ' + ipAddressData.location.postalCode,
                     timezone: ipAddressData.location.timezone,
                     isp: ipAddressData.isp,
                     lat: ipAddressData.location.lat,
