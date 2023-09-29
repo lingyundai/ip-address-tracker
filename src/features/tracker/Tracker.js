@@ -34,9 +34,9 @@ function Tracker ({ resultFields, handleChange, handleSubmit, inputError }) {
                             </svg>
                         </button>
                         {inputError.errorMessage && 
-                                <div class={"text-red-400 font-poppinsItalic font-thin tracking-normal"}>{inputError.errorMessage}</div>}
+                                <div class={"text-red-500 font-rubik text-xs mt-2 ml-8"}>{inputError.errorMessage}</div>}
                     </form>
-                    <div class="container mt-7 inline-block relative rounded-lg bg-white shadow
+                    <div class="container mt-5 inline-block relative rounded-lg bg-white shadow
                                 sm:max-w-sm sm:w-[330px] sm:h-[300px]
                                 lg:w-containerlg lg:h-40 z-10">
                         <div>
@@ -75,16 +75,19 @@ function Tracker ({ resultFields, handleChange, handleSubmit, inputError }) {
                 </div>
             </div>
             { resultFields.lat && resultFields.lng &&             
-                <MapContainer center={[resultFields.lat, resultFields.lng]} zoom={13} scrollWheelZoom={false} 
-                style={{ width: "100%", height: "78vh", zIndex: "1"}}>
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                <MapContainer 
+                    key={`${resultFields.lat}-${resultFields.lng}`} 
+                    center={[resultFields.lat, resultFields.lng]} 
+                    zoom={13} scrollWheelZoom={false} 
+                    style={{ width: "100%", height: "78vh", zIndex: "1"}}>
+                    <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     <Marker position={[resultFields.lat, resultFields.lng]}>
-                    <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
-                    </Popup>
+                        <Popup>
+                            A pretty CSS3 popup. <br /> Easily customizable.
+                        </Popup>
                     </Marker>
                 </MapContainer>
             }

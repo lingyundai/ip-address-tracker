@@ -8,7 +8,6 @@ function TrackerContainer() {
     const trackerStatus = useSelector(selectTrackerStatus);
     const trackerError = useSelector(selectTrackerError);
     const ipAddressData = useSelector(selectIpData);
-    // console.log("inside, ", trackerStatus);
 
     const defaultResultValues = {
         ip: '',
@@ -32,9 +31,7 @@ function TrackerContainer() {
     };
 
     const validateInput = () => {
-        const digitCount = userInput.match(/\d/g)?.length || 0;
-        console.log('digitCount', digitCount)
-        if (isNaN(userInput) || digitCount < 10) {
+        if (userInput.match(/[a-z]/i)) {
             setInputError((inputError) => ({
                 ...inputError,
                 errorMessage: 'Please enter a valid IP Address',
@@ -47,31 +44,42 @@ function TrackerContainer() {
         }
     }
 
-    console.log("input", userInput);
-    console.log("error", inputError);
-
     const handleSubmit = (e) => {
         e.preventDefault();
         validateInput();
+        dispatch(fetchIpAddress(userInput));
     }
 
     useEffect(() => {
         if (trackerStatus === 'idle') {
-            console.log("called");
             dispatch(fetchIpAddress())
         }
         if (trackerStatus === 'succeeded') {
-            setResultFields((prevState) => ({
-                ...prevState,
-                ip: ipAddressData.ip,
-                location: ipAddressData.location.city + ', ' + ipAddressData.location.region + ' ' + ipAddressData.location.postalCode,
-                timezone: ipAddressData.location.timezone,
-                isp: ipAddressData.isp,
-                lat: ipAddressData.location.lat,
-                lng: ipAddressData.location.lng,
-            }))
+            if (ipAddressData.location.lat !== 0 || 
+                ipAddressData.location.lng !== 0 ||
+                ipAddressData.location.timezone !== "" ||
+                ipAddressData.isp !== "")
+                setResultFields((prevState) => ({
+                    ...prevState,
+                    ip: ipAddressData.ip,
+                    location: ipAddressData.location.city + ', ' + ipAddressData.location.region + ' ' + ipAddressData.location.postalCode,
+                    timezone: ipAddressData.location.timezone,
+                    isp: ipAddressData.isp,
+                    lat: ipAddressData.location.lat,
+                    lng: ipAddressData.location.lng,
+                }))
+            else {
+                setInputError((inputError) => ({
+                    ...inputError,
+                    errorMessage: 'IP Address is not accessable',
+                }))
+            }
         } else {
             console.log(trackerError);   
+            setInputError((inputError) => ({
+                ...inputError,
+                errorMessage: trackerError,
+            }))
         }
     }, [trackerStatus, dispatch]);
 

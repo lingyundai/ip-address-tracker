@@ -15,10 +15,8 @@ export const fetchIpAddress = createAsyncThunk("tracker/fetchIpAddress",
         if (userInput.length > 0) {
             apiUrl += `&ipAddress=${userInput}`;
         }
-
         const response = await axios.get(apiUrl);
 
-        console.log(response);
         return response.data;
 })
 
